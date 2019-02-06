@@ -1,0 +1,9 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroesList">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </li>
+
+  <input type="button" (click)="refreshHeroes" value="Refresh"/>
+</ul>
