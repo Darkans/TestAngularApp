@@ -20,6 +20,11 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectedHero: Hero;
+  public onSelect(hero: Hero) {
+    this.selectedHero = hero;
+  }
+
   private getHeroList(count:number): Hero[] {
     let result: Hero[] = [];
 
