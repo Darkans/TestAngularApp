@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
 import { Hero } from '../Models/Hero';
 
 @Component({
@@ -9,30 +10,16 @@ import { Hero } from '../Models/Hero';
 export class HeroesComponent implements OnInit {
 
   heroesList: Hero[];
-  refreshHeroes = () => {
-    this.heroesList = this.getHeroList(5);
-  }
 
-  constructor() {
-    this.heroesList = this.getHeroList(5);
+  constructor(private heroService: HeroService) {
   }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
-  selectedHero: Hero;
-  public onSelect(hero: Hero) {
-    this.selectedHero = hero;
-  }
-
-  private getHeroList(count:number): Hero[] {
-    let result: Hero[] = [];
-
-    for (let i = 0; i < count; i++) {
-      let newHero = new Hero(i + 1, `heroname_${i + 1}`);
-      result.push(newHero);
-    }
-
-    return result;
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroesList = heroes);
   }
 }
