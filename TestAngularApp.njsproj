@@ -69,6 +69,8 @@
     <TypeScriptCompile Include="src\app\hero.service.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.spec.ts" />
     <TypeScriptCompile Include="src\app\heroes\heroes.component.ts" />
+    <TypeScriptCompile Include="src\app\in-memory-data.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\in-memory-data.service.ts" />
     <TypeScriptCompile Include="src\app\message.service.spec.ts" />
     <TypeScriptCompile Include="src\app\message.service.ts" />
     <TypeScriptCompile Include="src\app\messages\messages.component.spec.ts" />
